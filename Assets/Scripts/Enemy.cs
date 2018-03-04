@@ -7,16 +7,26 @@ public class Enemy : MonoBehaviour {
 
 	[SerializeField] GameObject deathFX;
 	[SerializeField] Transform parent;
+	[SerializeField] int scorePerHit = 12;
 
-	void Start () 
-	{
+	ScoreBoard scoreBoard;
+
+	void Start ()
+    {
+        AddMeshCollider();
+		scoreBoard = FindObjectOfType<ScoreBoard>();
+    }
+
+    private void AddMeshCollider()
+    {
         Collider meshCollider = gameObject.AddComponent<MeshCollider>();
-		meshCollider.isTrigger = false;
-		GetComponent<MeshCollider>().convex = true;		
-	}
+        meshCollider.isTrigger = false;
+        GetComponent<MeshCollider>().convex = true;
+    }
 
     void OnParticleCollision (GameObject other)
 	{
+		scoreBoard.ScoreHit(scorePerHit);
 		GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
 		fx.transform.parent = parent;
 		Destroy(gameObject);
