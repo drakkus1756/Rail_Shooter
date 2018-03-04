@@ -23,14 +23,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float controlPitchFactor = -20f;
     [SerializeField] float controlRollFactor = -20f;
 
-    private ParticleSystem particleSys;
-
     bool isControlEnabled = true;
-
-    void Start ()
-    {
-        particleSys = GetComponent<ParticleSystem>();
-    }
 
 	// Update is called once per frame
 	void Update ()
@@ -98,7 +91,6 @@ public class PlayerController : MonoBehaviour {
     {
         foreach (GameObject laser in lasers)
         {
-            //particleSys.emission.enabled.Equals(true);
             laser.SetActive(true);
         }
     }
