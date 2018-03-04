@@ -5,21 +5,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
-	// Use this for initialization
+	[SerializeField] GameObject deathFX;
+	[SerializeField] Transform parent;
+
 	void Start () 
 	{
-		AddNonTriggerCollider();
+        Collider meshCollider = gameObject.AddComponent<MeshCollider>();
+		meshCollider.isTrigger = false;
+		GetComponent<MeshCollider>().convex = true;		
 	}
-
-    private void AddNonTriggerCollider()
-    {
-        Collider collider = gameObject.AddComponent<MeshCollider>();
-		collider.isTrigger.Equals(false);
-		GetComponent<MeshCollider>().convex = true;
-    }
 
     void OnParticleCollision (GameObject other)
 	{
+		GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
+		fx.transform.parent = parent;
 		Destroy(gameObject);
 	}
 }
