@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	[Tooltip("in ms^-1")][SerializeField] float yControlSpeed = 18f;
 	[SerializeField] float xRange = 5f;
 	[SerializeField] float yRange = 3f;
+    [SerializeField] GameObject[] lasers;
 
     [Header("Screen-position Based")]
 	[SerializeField] float positionPitchFactor = -5f;
@@ -22,7 +23,14 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float controlPitchFactor = -20f;
     [SerializeField] float controlRollFactor = -20f;
 
+    private ParticleSystem particleSys;
+
     bool isControlEnabled = true;
+
+    void Start ()
+    {
+        particleSys = GetComponent<ParticleSystem>();
+    }
 
 	// Update is called once per frame
 	void Update ()
@@ -73,12 +81,33 @@ public class PlayerController : MonoBehaviour {
         transform.localPosition = new Vector3(clampedXPos, transform.localPosition.y, transform.localPosition.z);
         transform.localPosition = new Vector3(transform.localPosition.x, clampedyPos, transform.localPosition.z);
     }
-    
+
     void ProcessFiring()
     {
         if (CrossPlatformInputManager.GetButton("Fire"))
         {
-            print("Firing");
+            ActivateLasers();
+        }
+        else
+        {
+            DeactivateLasers();
         }
     }
+
+    private void ActivateLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            //particleSys.emission.enabled.Equals(true);
+            laser.SetActive(true);
+        }
+    }
+
+    private void DeactivateLasers()
+    {
+        foreach (GameObject laser in lasers)
+        {
+            laser.SetActive(false);
+        }
+}
 }
