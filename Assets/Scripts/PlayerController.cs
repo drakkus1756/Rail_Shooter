@@ -4,29 +4,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
-	[Tooltip("in ms^-1")][SerializeField] float xSpeed = 20f;
-	[Tooltip("in ms^-1")][SerializeField] float ySpeed = 18f;
+    // TODO: fix burst of speed at the beginning and slow down towards to middle-end
+
+    [Header("General")]
+	[Tooltip("in ms^-1")][SerializeField] float xControlSpeed = 20f;
+	[Tooltip("in ms^-1")][SerializeField] float yControlSpeed = 18f;
 	[SerializeField] float xRange = 5f;
 	[SerializeField] float yRange = 3f;
 
+    [Header("Screen-position Based")]
 	[SerializeField] float positionPitchFactor = -5f;
-	[SerializeField] float controlPitchFactor = -20f;
 	[SerializeField] float positionYawFactor = 5f;
-	[SerializeField] float controlRollFactor = -20f;
-
-	// Use this for initialization
-	void Start () 
-	{
-		
-	}
 	
+    [Header("Control-throw Based")]
+    [SerializeField] float controlPitchFactor = -20f;
+    [SerializeField] float controlRollFactor = -20f;
+
+    bool isControlEnabled = true;
+
 	// Update is called once per frame
 	void Update ()
     {
-        ProcessTranslation();
-		ProcessRotation();
+        if (isControlEnabled)
+        {
+            ProcessTranslation();
+		    ProcessRotation();
+        }
+    }
+
+    void OnPlayerDeath() // called by string reference
+    {
+        isControlEnabled = false;
     }
 
     void ProcessRotation()
@@ -50,8 +60,8 @@ public class Player : MonoBehaviour {
 		float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
     	float yThrow = CrossPlatformInputManager.GetAxis("Vertical");
 
-        float xOffset = xThrow * xSpeed * Time.deltaTime;
-        float yOffset = yThrow * ySpeed * Time.deltaTime;
+        float xOffset = xThrow * xControlSpeed * Time.deltaTime;
+        float yOffset = yThrow * yControlSpeed * Time.deltaTime;
 
         float rawXPos = transform.localPosition.x + xOffset;
         float rawYPos = transform.localPosition.y + yOffset;
