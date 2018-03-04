@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4206197176531932}
   - component: {fileID: 33793947946638098}
   - component: {fileID: 23703061122925786}
-  - component: {fileID: 65843441540290468}
+  - component: {fileID: 64368931511447670}
+  - component: {fileID: 114857336568198166}
   m_Layer: 0
   m_Name: Enemy 3
   m_TagString: Untagged
@@ -83,15 +84,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173831379041666}
   m_Mesh: {fileID: 4300016, guid: add769d179a9826498fc063c005d35bd, type: 3}
---- !u!65 &65843441540290468
-BoxCollider:
+--- !u!64 &64368931511447670
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1173831379041666}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.3655148, y: 0.8426175, z: 3.2854013}
-  m_Center: {x: 0.0000013652203, y: 0.122622326, z: -0.17548096}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300016, guid: add769d179a9826498fc063c005d35bd, type: 3}
+--- !u!114 &114857336568198166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173831379041666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fb192b2f5523a468343ab5f17b2aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

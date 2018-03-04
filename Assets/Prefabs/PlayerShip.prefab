@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 198588632366623516}
   - component: {fileID: 199437373192646794}
   m_Layer: 0
-  m_Name: Lasers
+  m_Name: Laser (Left)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 198624676507544726}
   - component: {fileID: 199319883190980308}
   m_Layer: 0
-  m_Name: Lasers (1)
+  m_Name: Laser (Right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2145254521
+  randomSeed: -977164432
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -427,7 +427,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 150
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -939,7 +939,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 8
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3740,7 +3740,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1058867687
+  randomSeed: -1597891076
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3788,7 +3788,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 150
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4300,7 +4300,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 8
       minScalar: 10
       maxCurve:
         serializedVersion: 2

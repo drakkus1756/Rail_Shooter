@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4982120152876262}
   - component: {fileID: 33786354711244044}
   - component: {fileID: 23959695497173786}
-  - component: {fileID: 65239264812345172}
+  - component: {fileID: 64981725697180842}
+  - component: {fileID: 114046322301788410}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1491637683152850}
   m_LocalRotation: {x: 0.04512866, y: -0.7240865, z: 0.08829083, w: 0.6825444}
-  m_LocalPosition: {x: -192.93, y: 70.98, z: -333.92}
+  m_LocalPosition: {x: -193.3, y: 71.3, z: -327.4}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,15 +84,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1491637683152850}
   m_Mesh: {fileID: 4300014, guid: add769d179a9826498fc063c005d35bd, type: 3}
---- !u!65 &65239264812345172
-BoxCollider:
+--- !u!64 &64981725697180842
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1491637683152850}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.8641564, y: 0.89487606, z: 3.2527087}
-  m_Center: {x: 0.0000019236363, y: -0.07116589, z: 0.32246116}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300014, guid: add769d179a9826498fc063c005d35bd, type: 3}
+--- !u!114 &114046322301788410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491637683152850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fb192b2f5523a468343ab5f17b2aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
