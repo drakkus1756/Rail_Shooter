@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
         {
             ProcessTranslation();
 		    ProcessRotation();
+            ProcessFiring();
         }
     }
 
@@ -71,5 +72,13 @@ public class PlayerController : MonoBehaviour {
 
         transform.localPosition = new Vector3(clampedXPos, transform.localPosition.y, transform.localPosition.z);
         transform.localPosition = new Vector3(transform.localPosition.x, clampedyPos, transform.localPosition.z);
+    }
+    
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            print("Firing");
+        }
     }
 }
