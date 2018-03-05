@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4703784324115918}
   - component: {fileID: 33032750236603090}
   - component: {fileID: 23184192142705734}
-  - component: {fileID: 95730130461101884}
   - component: {fileID: 114026641728870086}
   m_Layer: 0
   m_Name: Enemy 1
@@ -84,23 +83,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1800450653020634}
   m_Mesh: {fileID: 4300000, guid: 247766e192f437c4680b63372b7cb017, type: 3}
---- !u!95 &95730130461101884
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1800450653020634}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 247766e192f437c4680b63372b7cb017, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114026641728870086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,3 +97,4 @@ MonoBehaviour:
   deathFX: {fileID: 1672321802550518, guid: f4fe2293eb287a243b4fe9a322d055df, type: 2}
   parent: {fileID: 0}
   scorePerHit: 25
+  hits: 3
